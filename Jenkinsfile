@@ -15,13 +15,13 @@ pipeline {
         }
        stage("build docker image"){
             steps {
-                sh "docker build -t zervplatformv5api ."
+                sh "docker build -t codeAssesment ."
             }
         }
         
         stage("env cleanup"){
             steps {
-                sh returnStatus: true, script: 'docker rm -f zervplatformv5api'
+                sh returnStatus: true, script: 'docker rm -f codeAssesment'
                 sh "docker image prune -f"
             }
         }

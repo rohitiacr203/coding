@@ -1,7 +1,8 @@
 FROM java
 COPY src /app
 WORKDIR  /app
-RUN test install
+#RUN test install
+RUN gradlew build
  
 
 

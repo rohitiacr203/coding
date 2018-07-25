@@ -9,20 +9,20 @@ pipeline {
         
        stage("build docker image"){
             steps {
-                sh "docker build -t codeAssesment ."
+                sh "docker build -t codeassesment ."
             }
         }
         
         stage("env cleanup"){
             steps {
-                sh returnStatus: true, script: 'docker rm -f codeAssesment'
+                sh returnStatus: true, script: 'docker rm -f codeassesment'
                 sh "docker image prune -f"
             }
         }
         stage("Launch service"){
             steps {
-                sh "docker run -d -p:4020 --name codeAssesment codeAssesment"
-                sh "docker logs codeAssesment"
+                sh "docker run -d -p:4020 --name codeassesment codeassesment"
+                sh "docker logs codeassesment"
             }
         }
         stage("Launch Info"){

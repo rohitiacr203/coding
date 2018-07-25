@@ -13,5 +13,29 @@ pipeline {
                 }
             }
         }
+       stage("build docker image"){
+            steps {
+                sh "docker build -t zervplatformv5api ."
+            }
+        }
+        
+        stage("env cleanup"){
+            steps {
+                sh returnStatus: true, script: 'docker rm -f zervplatformv5api'
+                sh "docker image prune -f"
+            }
+        }
+        stage("Launch service"){
+            steps {
+                sh "docker run -d -p $CR_APP_ZERV_PORT:$CR_APP_ZERV_PORT --name zervplatformv5api zervplatformv5api"
+                sh "docker logs zervplatformv5api"
+            }
+        }
+        stage("Launch Info"){
+            steps {
+                echo "http://${ip}:$CR_APP_ZERV_PORT"
+            }
+        }
     }
 }
+

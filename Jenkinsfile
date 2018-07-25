@@ -9,7 +9,6 @@ pipeline {
         
        stage("build docker image"){
             steps {
-                /**sh " sudo docker build -t codeassesment ."*
                 sh " sudo docker build -t ."
             }
         }

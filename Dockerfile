@@ -4,21 +4,11 @@ WORKDIR  /app
 #RUN test install
 
 FROM gradle:4.2.1-jdk8-alpine
-#USER root                # This changes default user to root
-#RUN chown -R gradle /app # This changes ownership of folder
-#USER gradle              # This changes the user back to the default user "gradle"
-#RUN chmod +x ./gradlew
-#RUN ./gradlew build --stacktrace
-
-#RUN curl -L https://services.gradle.org/distributions/gradle-4.9-bin.zip -o gradle-4.9-bin.zip
-#RUN apt-get install -y unzip
-#RUN unzip gradle-4.9-bin.zip
 RUN echo 'export GRADLE_HOME=/app/gradle-4.9' >> $HOME/.bashrc
 RUN echo 'export PATH=$PATH:$GRADLE_HOME/bin' >> $HOME/.bashrc
-#RUN /bin/bash -c "source $HOME/.bashrc"
 RUN gradle wrapper --gradle-version 4.2.1
 RUN ./gradlew build --stacktrace
-#RUN gradle test jar
+RUN ./gradlew test
  
 
 

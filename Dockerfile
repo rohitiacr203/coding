@@ -4,9 +4,9 @@ WORKDIR  /app
 #RUN test install
 
 FROM gradle:4.2.1-jdk8-alpine
-USER root                # This changes default user to root
-RUN chown -R gradle /app # This changes ownership of folder
-USER gradle              # This changes the user back to the default user "gradle"
+#USER root                # This changes default user to root
+#RUN chown -R gradle /app # This changes ownership of folder
+#USER gradle              # This changes the user back to the default user "gradle"
 
 RUN ./gradlew build --stacktrace
 

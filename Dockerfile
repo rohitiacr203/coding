@@ -1,4 +1,4 @@
-FROM jdk
+FROM java
 COPY src /app
 WORKDIR  /app
 RUN test install

@@ -2,7 +2,6 @@ FROM java
 COPY src /app
 WORKDIR  /app
 #RUN test install
-RUN gradlew build
 
 RUN curl -L https://services.gradle.org/distributions/gradle-4.9-bin.zip -o gradle-4.9-bin.zip
 RUN apt-get install -y unzip

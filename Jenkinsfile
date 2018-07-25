@@ -27,13 +27,13 @@ pipeline {
         }
         stage("Launch service"){
             steps {
-                sh "docker run -d -p $CR_APP_ZERV_PORT:$CR_APP_ZERV_PORT --name zervplatformv5api zervplatformv5api"
-                sh "docker logs zervplatformv5api"
+                sh "docker run -d -p:4020 --name codeAssesment codeAssesment"
+                sh "docker logs codeAssesment"
             }
         }
         stage("Launch Info"){
             steps {
-                echo "http://${ip}:$CR_APP_ZERV_PORT"
+                echo "http://13.126.236.71:4020"
             }
         }
     }

@@ -9,7 +9,8 @@ pipeline {
         
        stage("build docker image"){
             steps {
-                sh " sudo docker build -t ."
+                /**sh " sudo docker build -t ."*/
+                docker build -f Dockerfile.build --build-arg version=1.0.2 ./build/
             }
         }
         

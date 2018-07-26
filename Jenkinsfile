@@ -16,9 +16,9 @@ pipeline {
        stage("run unit test case"){
             steps { 
                checkout scm
-                sh "cd src/test/" 
-                sh "./gradlew build"
-                sh "gradlew clean test"
+                #sh "cd src/test/" 
+                sh "gradle wrapper build"
+                sh "gradle wrapper test"
             }
         }
           

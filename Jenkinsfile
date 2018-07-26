@@ -13,14 +13,6 @@ pipeline {
             }
         }
           
-       stage("run unit test case"){
-            steps { 
-               checkout scm
-                sh "gradle wrapper build"
-                sh "gradle wrapper test"
-            }
-        }
-          
         stage("env cleanup"){
             steps {
                 sh " sudo -S docker rm -f codeassesment"

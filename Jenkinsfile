@@ -18,7 +18,7 @@ pipeline {
                checkout scm
                 sh "pwd"
                 sh "ls"
-                sh "var/lib/jenkins/workspace/assesment/src/test/"  
+                sh "src/test/"  
                 sh "gradle clean test"
             }
         }

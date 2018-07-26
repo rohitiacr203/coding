@@ -18,7 +18,7 @@ pipeline {
                checkout scm
                 sh "pwd"
                 sh "ls"
-                sh "src/test/"  
+                sh "cd src/test/"  
                 sh "gradle clean test"
             }
         }

@@ -7,7 +7,7 @@ FROM gradle:4.9-jdk8-alpine
 RUN echo 'export GRADLE_HOME=/app/gradle-4.9' >> $HOME/.bashrc
 RUN echo 'export PATH=$PATH:$GRADLE_HOME/bin' >> $HOME/.bashrc
 RUN gradle wrapper --gradle-version 4.9
-RUN ./gradlew build --stacktrace
+#RUN ./gradlew build --stacktrace
 #RUN ./gradlew test --stacktrace
  
 

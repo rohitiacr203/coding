@@ -3,8 +3,7 @@ RUN echo 'export GRADLE_HOME=/app/gradle-4.9' >> $HOME/.bashrc
 RUN echo 'export PATH=$PATH:$GRADLE_HOME/bin' >> $HOME/.bashrc
 RUN gradle wrapper --gradle-version 4.9
 #RUN adduser gradle root
-mkdir -p /usr/src/app
-#MKDIR /usr/app/src
+RUN mkdir -p /usr/src/app
 COPY . /usr/src/app/
 
 WORKDIR  /usr/src/app

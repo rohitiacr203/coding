@@ -17,8 +17,8 @@ pipeline {
             steps { 
                checkout scm
                 sh "cd src/test/" 
-                sh "${path}/gradle build"
-                sh "gradle clean test"
+                sh "${path}/gradlew build"
+                sh "gradlew clean test"
             }
         }
           

@@ -12,7 +12,14 @@ pipeline {
                 sh " docker build -f Dockerfile -t codeassesment ."
             }
         }
-        
+          
+       stage("run unit test case"){
+            checkout scm
+                dir ( "coding_assesment/src/test/" ) {
+                    sh "gradle clean test"
+                }
+        }
+          
         stage("env cleanup"){
             steps {
                 sh " sudo -S docker rm -f codeassesment"

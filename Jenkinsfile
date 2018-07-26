@@ -15,11 +15,10 @@ pipeline {
           
        stage("run unit test case"){
             steps { 
-                sh "ls"
                checkout scm
                 sh "pwd"
                 sh "ls"
-                sh "assesment/src/test/"  
+                sh "var/lib/jenkins/workspace/assesment/src/test/"  
                 sh "gradle clean test"
             }
         }

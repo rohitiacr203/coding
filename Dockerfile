@@ -1,4 +1,6 @@
 FROM java
+MKDIR /usr/app/
+#MKDIR /usr/app/src
 COPY src /usr/app/src/
 
 WORKDIR  /usr/app/src

@@ -20,14 +20,14 @@ pipeline {
         
         stage('Artifactory configuration') {
         // Tool name from Jenkins configuration
-        rtGradle.tool = "Gradle-2.4"
+        rtGradle.tool = "Gradle_4.9"
         // Set Artifactory repositories for dependencies resolution and artifacts deployment.
         rtGradle.deployer repo:'ext-release-local', server: server
         rtGradle.resolver repo:'remote-repos', server: server
     }
 
     stage('Gradle build') {
-        buildInfo = rtGradle.run rootDir: "gradle-examples/4/gradle-example-ci-server/", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
+        buildInfo = rtGradle.run rootDir: "coding_assesment/", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
     }
 
     stage('Publish build info') {

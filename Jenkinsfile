@@ -13,12 +13,11 @@ pipeline {
             }
         }
           
-        /*stage("env cleanup"){
+        stage("env cleanup"){
             steps {
-                sh " sudo -S docker rm -f codeassesment"
-                sh " sudo -S docker image prune -f"
+                sh "  docker rm -f codeassesment"
             }
-        }*/
+        }
         stage("Launch service"){
             steps {
                 sh " docker run -d --name codeassesment codeassesment"

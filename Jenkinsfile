@@ -16,8 +16,8 @@ pipeline {
         
         stage("env cleanup"){
             steps {
-                sh " sudo -s docker rm -f codeassesment"
-                sh " sudo -s docker image prune -f"
+                sh " sudo -S docker rm -f codeassesment"
+                sh " sudo -S docker image prune -f"
             }
         }
         stage("Launch service"){

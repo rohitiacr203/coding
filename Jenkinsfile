@@ -14,10 +14,11 @@ pipeline {
         }
           
        stage("run unit test case"){
-            checkout scm
-                dir ( "coding_assesment/src/test/" ) {
-                    sh "gradle clean test"
-                }
+            steps { 
+               checkout scm
+                sh "coding_assesment/src/test/"  
+                sh "gradle clean test"
+            }
         }
           
         stage("env cleanup"){

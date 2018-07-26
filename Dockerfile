@@ -1,9 +1,9 @@
 FROM java
-MKDIR /usr/app/
+RUN mkdir -p /usr/src/app
 #MKDIR /usr/app/src
-COPY src /usr/app/src/
+COPY src /usr/src/app/
 
-WORKDIR  /usr/app/src
+WORKDIR  /usr/src/app
 #RUN test install
 
 FROM gradle:4.9-jdk8-alpine

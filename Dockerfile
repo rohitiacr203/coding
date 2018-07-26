@@ -1,4 +1,5 @@
 FROM gradle:4.9-jdk8-alpine
+USER root
 RUN echo 'export GRADLE_HOME=/app/gradle-4.9' >> $HOME/.bashrc
 RUN echo 'export PATH=$PATH:$GRADLE_HOME/bin' >> $HOME/.bashrc
 RUN gradle wrapper --gradle-version 4.9

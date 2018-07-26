@@ -2,7 +2,6 @@ FROM gradle:4.9-jdk8-alpine
 USER root
 RUN mkdir -p /usr/src/app
 COPY . /usr/src/app/
-COPY startup.sh .
 CMD ["/bin/sh", "startup.sh"] 
 
 

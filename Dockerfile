@@ -8,7 +8,8 @@ RUN echo 'export GRADLE_HOME=/app/gradle-4.2.1' >> $HOME/.bashrc
 RUN echo 'export PATH=$PATH:$GRADLE_HOME/bin' >> $HOME/.bashrc
 RUN gradle wrapper --gradle-version 4.2.1
 RUN ./gradlew build --stacktrace
-RUN ./gradlew clean test --stacktrace
+#RUN ./gradlew clean test --stacktrace
+RUN gradle test install
  
 
 

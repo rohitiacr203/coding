@@ -21,8 +21,8 @@ pipeline {
         }*/
         stage("Launch service"){
             steps {
-                sh " sudo docker run -d -p:4020 --name codeassesment codeassesment"
-                sh " sudo docker logs codeassesment"
+                sh " docker run -d --name codeassesment codeassesment"
+                sh " docker logs codeassesment"
             }
         }
         stage("Launch Info"){

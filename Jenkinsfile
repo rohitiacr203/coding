@@ -16,7 +16,7 @@ pipeline {
        stage("run unit test case"){
             steps { 
                checkout scm
-                sh "coding_assesment/src/test/"  
+                sh "assesment/src/test/"  
                 sh "gradle clean test"
             }
         }

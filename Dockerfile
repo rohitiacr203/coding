@@ -1,6 +1,7 @@
 FROM java
-COPY src /app
-WORKDIR  /app
+COPY src /usr/app/src/
+
+WORKDIR  /usr/app/src
 #RUN test install
 
 FROM gradle:4.9-jdk8-alpine

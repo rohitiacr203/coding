@@ -12,7 +12,14 @@ pipeline {
                 sh " docker build -f Dockerfile -t codeassesment ."
             }
         }
-          
+         
+        stage("static code analysis"){
+            steps {
+                withSonarQubeEnv('sonarqube') {
+                    sh '/opt/sonar/bin/sonar-scanner -Dsonar.projectKey=f275f9da59b48b9babf5cf4c61a3e594abbae833 -Dsonar.sources=.
+                }
+            }
+        }
         stage("env cleanup"){
             steps {
                 sh "  docker rm -f codeassesment"

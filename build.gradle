@@ -10,11 +10,18 @@ buildscript {
     }
 }
 
+plugins {
+  id "org.sonarqube" version "6.7"
+  id "toolVersion"  version "0.8.1"
+}
+
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'maven'
 apply plugin: 'base'
 apply plugin: 'groovy'
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'jacoco'
 
 repositories {
     mavenCentral()

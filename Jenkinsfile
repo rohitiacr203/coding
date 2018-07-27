@@ -6,14 +6,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Build') {
-            steps {
-                def scannerHome = tool 'SonarScanner'
-                withSonarQubeEnv('sonarqube') {
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
-            }
-        }
+
        stage("build docker image"){
             steps {
                 sh " docker build -f Dockerfile -t codeassesment ."

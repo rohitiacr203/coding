@@ -53,3 +53,4 @@ dependencies {
         html.destination file("${buildDir}/jacocoHtml")
     }
 }
+test.finalizedBy jacocoTestReport

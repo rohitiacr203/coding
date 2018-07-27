@@ -13,13 +13,13 @@ pipeline {
             }
         }
          
-        stage("static code analysis"){
+      /*  stage("static code analysis"){
             steps {
                 withSonarQubeEnv('sonarqube') {
                     sh '/opt/sonar/bin/sonar-scanner -Dsonar.projectKey=asessment -Dsonar.projectName=assesment -Dsonar.sources=.'
                 }
             }
-        }
+        } */
         stage("env cleanup"){
             steps {
                 sh "  docker rm -f codeassesment"

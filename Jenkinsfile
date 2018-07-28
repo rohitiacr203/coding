@@ -6,10 +6,10 @@ pipeline {
                 checkout scm
             }
         }
-        stage("checkout1"){
+        stage("gradle-build"){
             steps {
-                print"2"
+                buildInfo = rtGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: './gradlew build'
             }
-        }          
+        }
      }
 }

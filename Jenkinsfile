@@ -9,9 +9,10 @@ pipeline {
         }
         stage("gradle-build"){
             steps {
-                
-                sh '''gradle wrapper
-                 gradlew build'''
+                scripts{
+                    sh '''gradle wrapper
+                        gradlew build'''
+                }
             }
         }
      }

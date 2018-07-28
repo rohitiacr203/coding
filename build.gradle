@@ -21,11 +21,6 @@ apply plugin: 'jacoco'
 repositories {
     mavenCentral()
 }
-sonarqube {
-    properties {
-        property 'sonar.projectName', 'Example of SonarQube Scanner for Gradle Usage'
-    }
-}
 
 sourceCompatibility = javacompatibility
 targetCompatibility = javacompatibility

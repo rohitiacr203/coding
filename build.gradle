@@ -10,12 +10,6 @@ buildscript {
     }
 }
 
-
-plugins {
-  id "org.sonarqube"
-  id "toolVersion"  version "3.0.1"
-}
-
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'maven'

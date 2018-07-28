@@ -23,9 +23,9 @@ services:
       - ./sonar-dependency-check-plugin-1.1.0.jar:/opt/sonarqube/extensions/plugins/sonar-dependency-check-plugin-1.1.0.jar
     entrypoint: /opt/sonarqube/start.sh
     environment:
-      - USER_LOGIN=<your-login>
-      - USER_NAME=<your-name>
-      - USER_PASSWORD=<your-password>
+      - USER_LOGIN=sonarqube
+      - USER_NAME=sonarqube
+      - USER_PASSWORD=sonarqube
       - SONARQUBE_JDBC_USERNAME=sonarqube
       - SONARQUBE_JDBC_PASSWORD=sonarqube
       - SONARQUBE_JDBC_URL=jdbc:mysql://mysql:3306/sonarqube?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true

@@ -8,8 +8,12 @@ pipeline {
         }
         stage("gradle-build"){
             steps {
-                    sh '''gradle wrapper
-                        gradlew build'''
+                    sh '''
+                        echo 'export GRADLE_HOME=/opt/gradle/gradle-4.9/' >> $HOME/.bashrc
+                        echo 'export PATH=$PATH:$GRADLE_HOME/bin' >> $HOME/.bashrc
+                        gradle wrapper
+                        gradlew build
+                        '''
             }
         }
      }

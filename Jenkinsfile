@@ -9,8 +9,8 @@ pipeline {
         stage("gradle-build"){
             steps {
                     sh '''
-                        echo 'export GRADLE_HOME=/opt/gradle/gradle-4.9/' >> $HOME/.bashrc
-                        echo 'export PATH=$PATH:$GRADLE_HOME/bin' >> $HOME/.bashrc
+                        export GRADLE_HOME=/opt/gradle/gradle-4.9/
+                        export PATH=$PATH:$GRADLE_HOME/bin'
                         gradle wrapper
                         gradlew build
                         '''

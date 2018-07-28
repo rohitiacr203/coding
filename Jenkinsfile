@@ -8,7 +8,7 @@ pipeline {
         }
         stage("gradle-build"){
             steps {
-                buildInfo = rtGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: './gradlew build'
+                sh './gradlew build'
             }
         }
      }

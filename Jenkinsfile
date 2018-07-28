@@ -4,11 +4,14 @@ pipeline {
         stage("checkout"){
             steps {
                 checkout scm
+                gitpath=
             }
         }
         stage("gradle-build"){
             steps {
-                sh './gradlew build'
+                
+                sh '''gradle wrapper
+                 gradlew build'''
             }
         }
      }

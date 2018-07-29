@@ -32,6 +32,10 @@ test {
 	ignoreFailures = true
 }
 
+repositories {
+        mavenCentral()
+}
+
 sourceCompatibility = javacompatibility
 targetCompatibility = javacompatibility
 dependencies {

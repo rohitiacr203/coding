@@ -26,16 +26,7 @@ pipeline {
         stage('Promote code to QA branch') {
             steps {
                   sh '''
-                    touch .gitignore
-                    echo "Jenkinsfile" > .gitignore
-                    echo "Dockerfile" >> .gitignore
-                    echo "docker-compose.yml" >> .gitignore
-                    echo "build/" >> .gitignore
-                    echo "gradle/" >> .gitignore
-                    echo ".gradle" >> .gitignore
-                    echo "gradle*" >> .gitignore
-                    git add .gitignore
-                    git commit -am "Pushing code to QA"
+                    git pull origin qa
                     git push origin qa
                   '''
                 }

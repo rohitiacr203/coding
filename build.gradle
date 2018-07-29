@@ -22,7 +22,7 @@ apply plugin: "org.sonarqube"
 
 sonarqube {
   properties {
-    property "sonar.projectName","Pipeline Sonar CodeAssesement"
+    property "sonar.projectName","devPipeline Sonar CodeAssesement"
     property "sonar.projectKey", "org.sonarqubeJacocoCodeCoverage"
     property "sonar.reportPath" , "${project.buildDir}/jacoco/test.exec"
   }

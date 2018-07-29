@@ -24,6 +24,25 @@ pipeline {
                   sh './gradlew --info sonarqube'
                 }
             }
-        }       
+        }
+        stage('Promote code to QA branch') {
+            steps {
+                  sh '''
+                    touch .gitignore
+                    echo "Jenkinsfile" > .gitignore
+                    echo "Dockerfile" >> .gitignore
+                    echo "docker-compose.yml" >> .gitignore
+                    echo "build/" >> .gitignore
+                    echo "gradle/" >> .gitignore
+                    echo ".gradle" >> .gitignore
+                    echo "gradle*" >> .gitignore
+                    git checkout -b qa
+                    git add *
+                    git commit -am "Pushing code to QA"
+                    git push origin qa
+                  '''
+                }
+            }
+        }           
      }
 }

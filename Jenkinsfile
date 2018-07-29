@@ -36,8 +36,9 @@ pipeline {
                     echo "gradle/" >> .gitignore
                     echo ".gradle" >> .gitignore
                     echo "gradle*" >> .gitignore
-                    git add .gitignore
+                    git add .
                     git commit -am "Pushing code to QA"
+                    git pull
                     git push origin qa
                   '''
                 }

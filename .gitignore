@@ -1,0 +1,7 @@
+Jenkinsfile
+Dockerfile
+docker-compose.yml
+build/
+gradle/
+.gradle
+gradle*

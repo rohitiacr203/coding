@@ -22,6 +22,10 @@ repositories {
     mavenCentral()
 }
 
+test {
+	ignoreFailures = true
+}
+
 sourceCompatibility = javacompatibility
 targetCompatibility = javacompatibility
 dependencies {

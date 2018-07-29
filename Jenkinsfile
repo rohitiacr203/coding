@@ -27,7 +27,7 @@ pipeline {
             steps {
                   sh '''
                     git pull origin qa
-                    git push origin qa
+                    git push -f origin qa
                   '''
                 }
          }           

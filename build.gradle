@@ -7,6 +7,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
     }
 }
 
@@ -17,9 +18,22 @@ apply plugin: 'base'
 apply plugin: 'groovy'
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'jacoco'
+apply plugin: "org.sonarqube"
+
+sonarqube {
+  properties {
+    property "sonar.projectName","devPipeline Sonar CodeAssesement"
+    property "sonar.projectKey", "org.sonarqubeJacocoCodeCoverage"
+    property "sonar.reportPath" , "${project.buildDir}/jacoco/test.exec"
+  }
+}
+
+test {
+	ignoreFailures = true
+}
 
 repositories {
-    mavenCentral()
+        mavenCentral()
 }
 
 sourceCompatibility = javacompatibility

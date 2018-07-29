@@ -1,0 +1,20 @@
+.gradle
+build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+gradle
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+#ignore jenkinsfile, dockerfile as it defers in each environment
+Jenkinsfile
+Dockerfile
+docker-compose.yml

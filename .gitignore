@@ -18,3 +18,4 @@ gradle
 Jenkinsfile
 Dockerfile
 docker-compose.yml
+.gitignore

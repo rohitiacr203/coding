@@ -25,7 +25,7 @@ repositories {
 test {
 	ignoreFailures = true
 }
-plugins{
+plugins {
 	id "org.sonarqube" version "6.4"
 }
 

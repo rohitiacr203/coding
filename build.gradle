@@ -25,6 +25,9 @@ repositories {
 test {
 	ignoreFailures = true
 }
+plugins{
+	id "org.sonarqube" version "6.4"
+}
 
 sourceCompatibility = javacompatibility
 targetCompatibility = javacompatibility

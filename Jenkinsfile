@@ -29,7 +29,7 @@ pipeline {
                   sh '''
                     pwd
                     git status
-                    git push -f origin dev:qa
+                    git push -f origin HEAD:qa
                   '''
                 }
          }           

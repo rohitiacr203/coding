@@ -7,12 +7,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	classpath "org.sonarsource.scanner.gradle: sonarqube-gradle-plugin:2.5"
     }
-}
-
-plugins {
-	id "org.sonarqube" version "2.5"
 }
 
 apply plugin: 'java'
@@ -26,6 +21,14 @@ apply plugin: "org.sonarqube"
 
 repositories {
     mavenCentral()
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectName","Pipeline Sonar CodeAssesement"
+    property "sonar.projectKey", "org.sonarqubeJacocoCodeCoverage"
+    property "sonar.reportPath" , "${project.buildDir}/jacoco/test.exec"
+  }
 }
 
 test {

@@ -27,6 +27,8 @@ pipeline {
         stage('Promote code to QA branch') {
             steps {
                   sh '''
+                    pwd
+                    git status
                     git push -f origin dev:qa
                   '''
                 }

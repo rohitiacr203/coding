@@ -24,12 +24,12 @@ pipeline {
                 }
             }
         }
-        stage('Promote code to QA branch') {
+        stage('Promote code to Preprod branch') {
             steps {
                   sh '''
                     pwd
                     git status
-                    git push -f origin HEAD:qa
+                    git push -f origin HEAD:preprod
                   '''
                 }
          }           

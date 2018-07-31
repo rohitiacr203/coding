@@ -23,13 +23,6 @@ pipeline {
                   sh './gradlew --info sonarqube'
                 }
             }
-        }
-        stage('Promote code to Release branch') {
-            steps {
-                  sh '''
-                    git push -f origin HEAD:release
-                  '''
-                }
-         }           
+        }          
      }
 }

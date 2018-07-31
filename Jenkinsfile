@@ -30,10 +30,11 @@ pipeline {
                     git pull origin master
                     git add .
                     git commit -m "commited changes"
-                    git push origin master
+                    git push origin dev
+                    git checkout master
+                    git pull origin dev
                     git checkout qa
                     git pull origin master
-                    git push -f origin qa
                   '''
             }                      
         }       

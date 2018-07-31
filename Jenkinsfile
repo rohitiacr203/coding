@@ -28,7 +28,7 @@ pipeline {
                   sh '''
                     git branch
                     git pull origin master
-                    git push origin dev
+                    git push origin HEAD:dev
                     git checkout master
                     git pull origin dev
                     git checkout qa

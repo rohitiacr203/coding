@@ -29,7 +29,12 @@ pipeline {
                   sh '''
                     pwd
                     git status
-                    git push -f origin HEAD:preprod
+                    git add .
+                    git commit -m "commited changes"
+                    git push origin master
+                    git checkout release
+                    git pull origin master
+                    git push -f origin release
                   '''
                 }
          }           

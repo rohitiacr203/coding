@@ -19,5 +19,6 @@ Jenkinsfile
 Dockerfile
 docker-compose.yml
 .gitignore
+gradlew.bat
 gradlew
 

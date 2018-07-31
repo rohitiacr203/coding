@@ -26,7 +26,7 @@ pipeline {
          stage('Promote code to QA branch') {
             steps {
                   sh '''
-                    pwd
+                    git branch
                     git pull origin master
                     git push origin dev
                     git checkout master

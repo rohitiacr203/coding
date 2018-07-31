@@ -22,20 +22,6 @@ pipeline {
                   sh './gradlew --info sonarqube'
                 }
             }
-        }
-        stage('Promote code to QA branch') {
-            steps {
-                  sh '''
-                    pwd
-                    git pull origin master
-                    git add .
-                    git commit -m "commited changes"
-                    git push -f origin master
-                    git checkout qa
-                    git pull origin master
-                    git push -f origin qa
-                  '''
-              }
-         }           
+        }       
      }
 }

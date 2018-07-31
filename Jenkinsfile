@@ -29,6 +29,11 @@ pipeline {
                   sh '''
                     pwd
                     git status
+                    git add .
+                    git commit -m "commited changes"
+                    git push origin master
+                    git checkout qa
+                    git pull origin master
                     git push -f origin HEAD:qa
                   '''
                 }

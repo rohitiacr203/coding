@@ -3,7 +3,6 @@ pipeline {
       stages {
         stage("checkout"){
             steps {
-                step([$class: 'WsCleanup'])
                 checkout scm
             }
         }
@@ -34,9 +33,9 @@ pipeline {
                     git push origin master
                     git checkout qa
                     git pull origin master
-                    git push -f origin HEAD:qa
+                    git push -f origin qa
                   '''
-                }
+              }
          }           
      }
 }

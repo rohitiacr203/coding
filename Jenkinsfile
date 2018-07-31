@@ -27,7 +27,7 @@ pipeline {
             steps {
                   sh '''
                     pwd
-                    git pull --rebase origin master
+                    git pull origin master
                     git add .
                     git commit -m "commited changes"
                     git push -f origin master

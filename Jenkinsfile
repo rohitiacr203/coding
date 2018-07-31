@@ -27,7 +27,7 @@ pipeline {
             steps {
                   sh '''
                     pwd
-                    git status
+                    git pull origin master
                     git add .
                     git commit -m "commited changes"
                     git push -f origin master

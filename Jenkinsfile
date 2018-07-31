@@ -30,7 +30,7 @@ pipeline {
                     git status
                     git add .
                     git commit -m "commited changes"
-                    git push origin master
+                    git push -f origin master
                     git checkout qa
                     git pull origin master
                     git push -f origin qa

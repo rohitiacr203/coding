@@ -28,8 +28,6 @@ pipeline {
                   sh '''
                     pwd
                     git pull origin master
-                    git add .
-                    git commit -m "commited changes"
                     git push origin dev
                     git checkout master
                     git pull origin dev

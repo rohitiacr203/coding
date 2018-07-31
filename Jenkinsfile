@@ -27,13 +27,8 @@ pipeline {
         stage('Promote code to Preprod branch') {
             steps {
                   sh '''
-                    pwd
-                    git status
-                    git add .
-                    git commit -m "commited changes"
-                    git push origin master
+                    git push origin HEAD:preprod
                     git checkout release
-                    git pull origin master
                     git push -f origin release
                   '''
                 }

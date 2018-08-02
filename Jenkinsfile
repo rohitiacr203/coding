@@ -29,8 +29,9 @@ pipeline {
                     git branch
                     git pull origin dev
                     git checkout qa
-                    git push -f origin origin/dev:qa
+                    git push -f origin origin/dev::a
                   '''
+                
             }                      
         }       
      }

@@ -27,7 +27,7 @@ pipeline {
             steps {
                   sh '''
                     git branch
-                    git pull origin master
+                    git pull origin dev
                     git checkout qa
                     git push -f origin HEAD:qa
                   '''

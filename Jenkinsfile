@@ -29,7 +29,7 @@ pipeline {
                     git branch
                     git pull origin master
                     git checkout qa
-                    git push origin HEAD:qa
+                    git push -f origin HEAD:qa
                   '''
             }                      
         }       

@@ -13,7 +13,7 @@ pipeline {
                         export PATH=$PATH:$GRADLE_HOME/bin
                         gradle wrapper
                         ./gradlew build
-                        ./gradle fatjar
+                        ./gradlew fatjar
                         '''
             }
         }

@@ -21,6 +21,8 @@ apply plugin: 'groovy'
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'jacoco'
 apply plugin: "org.sonarqube"
+archivesBaseName = 'assesment'
+version = '1.0-SNAPSHOT'
 
 sonarqube {
   properties {
@@ -28,6 +30,14 @@ sonarqube {
     property "sonar.projectKey", "org.sonarqubeJacocoCodeCoverage"
     property "sonar.reportPath" , "${project.buildDir}/jacoco/test.exec"
   }
+}
+
+fatJar {
+  classifier 'fat'
+  manifest {
+    attributes 'Main-Class': 'AtmApplication'
+  }
+  exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
 }
 
 test {

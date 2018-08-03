@@ -4,10 +4,12 @@ buildscript {
     }
     repositories {
         mavenCentral()
+	jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
+	classpath "eu.appsatori:gradle-fatjar-plugin:0.3"
     }
 }
 

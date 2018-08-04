@@ -67,6 +67,9 @@ pipeline {
             }                      
         } 
       post {
+        always {
+            echo 'Test run completed'
+        }          
            changed {
                   sendNotification buildChanged:true
                   }

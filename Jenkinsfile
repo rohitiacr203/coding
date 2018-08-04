@@ -28,9 +28,22 @@ pipeline {
                   sh '''
                     ls -la
                     git push origin origin/dev:qa
-                  '''
-                
-            }                      
-         } 
+                  '''                
+                  }                      
+              } 
+      post {
+        failure {
+            script {
+                currentBuild.result = 'FAILURE'
+            }
+        }
+
+        always {
+            step([$class: 'Mailer',
+                notifyEveryUnstableBuild: true,
+                recipients: "baptiste.wicht@gmail.com",
+                sendToIndividuals: true])
+           }
+        }          
      }
  }

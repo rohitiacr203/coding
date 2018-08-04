@@ -27,7 +27,7 @@ pipeline {
             steps {
                   sh '''
                     ls -la
-                    git push -f origin origin/dev:qa
+                    git push origin origin/dev:qa
                   '''
                 
             }                      

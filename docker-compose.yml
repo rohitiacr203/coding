@@ -29,3 +29,5 @@ services:
       - SONARQUBE_JDBC_USERNAME=sonarqube
       - SONARQUBE_JDBC_PASSWORD=sonarqube
       - SONARQUBE_JDBC_URL=jdbc:mysql://mysql:3306/sonarqube?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+      
+      #test

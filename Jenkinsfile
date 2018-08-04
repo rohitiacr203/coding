@@ -66,12 +66,13 @@ pipeline {
                 
             }                      
         } 
-    post {
-        changed {
-            sendNotification buildChanged:true
+          stage('email notification'){
+          post {
+            changed {
+              sendNotification buildChanged:true
         }
-        failure {
-            sendNotification buildChanged:false
+          failure {
+              sendNotification buildChanged:false
         }
       }          
    }

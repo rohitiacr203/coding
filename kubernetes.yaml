@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: assesment_container
-        image: nginx:1.7.9
+        image: assesment:1.0
         resources:
           requests:
             cpu: 100m

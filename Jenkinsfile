@@ -6,7 +6,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage("gradle-build"){
+        stage("Build"){
             steps {
                     sh '''
                         export GRADLE_HOME=/opt/gradle/gradle-4.9

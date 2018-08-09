@@ -7,13 +7,28 @@ pipeline {
             }
         }
         stage("Build"){
-            steps {
+            try {
+                steps {
                     sh '''
                         export GRADLE_HOME=/opt/gradle/gradle-4.9
                         export PATH=$PATH:$GRADLE_HOME/bin
                         gradle wrapper
                         ./gradlew build
                         '''
+                    }
+                } catch (e) {
+                currentBuild.result = "FAILED"
+                notifyFailed()
+                throw e
+              }
+            
+            def notifyFailed() {
+              emailext (
+                  subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                  body: """<p>FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+                    <p>Check console output at "<a href="${env.BUILD_URL}">${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>"</p>""",
+                  recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+                )
             }
         }
         stage('SonarQube analysis') {
@@ -31,19 +46,6 @@ pipeline {
                   '''                
                   }                      
               } 
-      }
-      post {
-        failure {
-            script {
-                currentBuild.result = 'FAILURE'
-            }
-        }
-
-        always {
-            step([$class: 'Mailer',
-                notifyEveryUnstableBuild: true,
-                recipients: "rohitiacr203@gmail.com",
-                sendToIndividuals: true])
-           }
-        }          
- }
+         }
+    }
+}

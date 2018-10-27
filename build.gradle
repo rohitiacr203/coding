@@ -32,14 +32,6 @@ sonarqube {
   }
 }
 
-fatJar {
-  classifier 'fat'
-  manifest {
-    attributes 'Main-Class': 'AtmApplication'
-  }
-  exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
-}
-
 test {
 	ignoreFailures = true
 }
